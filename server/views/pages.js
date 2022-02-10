@@ -41,11 +41,10 @@ const page = (title, body) => {
     const title = "Tiny-URL result";
     const body = `
     <div class="input-group mb-3">
-      <input type="text" class="form-control" value=${short_url} aria-label="Username" aria-describedby="basic-addon1" id = "short_url" readonly>
-      <div class="input-group-append">
-        <button class="btn btn-outline-secondary" type="button"><i class="fa fa-copy"></i></button>
-        <button class="btn btn-outline-secondary" type="button">Shorten another</button>
+      <div class="input-group-prepend">
+        <span class="input-group-text" id="basic-addon1">URL</span>
       </div>
+      <input type="text" class="form-control" value=${short_url} aria-label="Username" aria-describedby="basic-addon1" readonly>
     </div>`
 
     return page(title, body);
