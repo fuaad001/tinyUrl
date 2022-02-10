@@ -20,11 +20,13 @@ const page = (title, body) => {
       </script>
     </head>
     <body>
-      <div _ngcontent-serverapp-c85="" class="card-body">
-        <h1 class="text-center" _ngcontent-serverapp-c85="">Tiny URL</h1>
-          <p class="text-center" _ngcontent-serverapp-c85="" class="lead">Shorten that long URL</p>
-          ${body}
-          <!----><!----><!---->
+      <div class="card bg-light text-dark">
+        <div class="card-body">
+          <h1 class="text-center" class="text-primary">Tiny URL</h1>
+            <p class="text-center" class="lead">Shorten that long URL</p>
+            ${body}
+            <!----><!----><!---->
+        </div>
       </div>
     </body>
     </html>
@@ -34,11 +36,10 @@ const page = (title, body) => {
   const index = () => {
     const title = "Tiny-URL";
     const body = `
-    <form _ngcontent-serverapp-c85="" novalidate="" class="ng-untouched ng-pristine ng-invalid" method="post">
-        <div _ngcontent-serverapp-c85="" class="input-group">
-            <input _ngcontent-serverapp-c85="" data-cy="newsletterSignupEmailButton" name="url" id="url" placeholder="Enter long url..." aria-label="Your long url..." formcontrolname="url" class="form-control ng-untouched ng-pristine ng-invalid" autocomplete="off">
-            <button _ngcontent-serverapp-c85="" data-cy="newsletterSignupSubmit" type="submit" class="btn-signup btn btn-primary fw-500">Shorten URL!</button>
-            <div _ngcontent-serverapp-c85="" class="invalid-feedback mt-2">Email required.</div>
+    <form novalidate="" class="ng-untouched ng-pristine ng-invalid" method="post">
+        <div class="input-group">
+            <input name="url" id="url" placeholder="Enter long url..." aria-label="Your long url..." formcontrolname="url" class="form-control ng-untouched ng-pristine ng-invalid" autocomplete="off">
+            <button type="submit" class="btn btn-outline-success">Shorten URL!</button>
             <!----><!---->
         </div>
     </form>`;
@@ -51,8 +52,8 @@ const page = (title, body) => {
     <div class="input-group mb-3">
       <input type="text" class="form-control" value=${short_url} aria-label="Username" aria-describedby="basic-addon1" id = "short_url" readonly>
       <div class="input-group-append">
-        <button class="btn btn-outline-secondary" type="button" onclick="copy()"><i class="fa fa-copy"></i></button>
-        <button class="btn btn-outline-secondary" type="button" onclick="history.back()">Shorten another</button>
+        <button class="btn btn-outline-primary" type="button" onclick="copy()"><i class="fa fa-copy"></i></button>
+        <button class="btn btn-outline-primary" type="button" onclick="history.back()">Shorten another</button>
       </div>
     </div>`
 
