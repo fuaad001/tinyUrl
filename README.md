@@ -19,7 +19,7 @@ This is a simple website that can be used shorten long URLs
 * Install all the dependencies.
 * On your terminal run `npm run start`
 * Access the live site using the local host provided
-* Or access the live website by clicking on this url https://dashboard.heroku.com/apps/hmahmou3-tiny-url
+* Or access the live website by clicking on this url https://hmahmou3-tiny-url.herokuapp.com/
 
 ## Known Bugs
 No Bugs
