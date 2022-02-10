@@ -1,0 +1,29 @@
+{
+  "name": "tiny-url",
+  "version": "1.0.0",
+  "description": "This is a simple website that can be used shorten long URLs",
+  "main": "server/index.js",
+  "scripts": {
+    "dev": "nodemon server/index.js",
+    "start": "node server/index.js",
+    "test": "echo \"Error: no test specified\" && exit 1"
+  },
+  "repository": {
+    "type": "git",
+    "url": "git+https://github.com/cs421sp22-homework/homework-1-fuaad001.git"
+  },
+  "keywords": [],
+  "author": "",
+  "license": "ISC",
+  "bugs": {
+    "url": "https://github.com/cs421sp22-homework/homework-1-fuaad001/issues"
+  },
+  "homepage": "https://github.com/cs421sp22-homework/homework-1-fuaad001#readme",
+  "dependencies": {
+    "dotenv": "^16.0.0",
+    "express": "^4.17.2",
+    "mongoose": "^6.2.1",
+    "mongoose-nanoid": "^2.0.0",
+    "nodemon": "^2.0.15"
+  }
+}
