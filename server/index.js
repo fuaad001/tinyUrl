@@ -22,9 +22,9 @@ app.post("/", async (req, res) => {
 
   try {
     const data = await urls.create({url});
-    res.send(result(data._id));
+    res.send(result(`https://hmahmou3-tiny-url.herokuapp.com/${data._id}`));
   } catch (err) {
-    res.send(result("Error"));
+    res.status(err.status || 500).json({ message: err.message });
   }
 });
 
