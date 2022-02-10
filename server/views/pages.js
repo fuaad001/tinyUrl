@@ -10,6 +10,14 @@ const page = (title, body) => {
       <link rel="stylesheet" href="https://stackpath.bootstrapcdn.com/bootstrap/4.3.1/css/bootstrap.min.css" integrity="sha384-ggOyR0iXCbMQv3Xipma34MD+dH/1fQ784/j6cY/iJTQUOhcWr7x9JvoRxT2MZw1T" crossorigin="anonymous"> 
       <link rel="stylesheet" href="https://cdn.jsdelivr.net/npm/water.css@2/out/water.css">
       <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/4.7.0/css/font-awesome.min.css">
+      <script>
+        function copy() {
+          var copyText = document.getElementById("short_url");
+          copyText.select();
+          copyText.setSelectionRange(0, 99999); /* For mobile devices */
+          navigator.clipboard.writeText(copyText.value);
+        }
+      </script>
     </head>
     <body>
       <div _ngcontent-serverapp-c85="" class="card-body">
@@ -28,7 +36,7 @@ const page = (title, body) => {
     const body = `
     <form _ngcontent-serverapp-c85="" novalidate="" class="ng-untouched ng-pristine ng-invalid" method="post">
         <div _ngcontent-serverapp-c85="" class="input-group">
-            <input _ngcontent-serverapp-c85="" data-cy="newsletterSignupEmailButton" name="url" id="url" placeholder="Enter long url..." aria-label="Your long url..." formcontrolname="url" class="form-control ng-untouched ng-pristine ng-invalid">
+            <input _ngcontent-serverapp-c85="" data-cy="newsletterSignupEmailButton" name="url" id="url" placeholder="Enter long url..." aria-label="Your long url..." formcontrolname="url" class="form-control ng-untouched ng-pristine ng-invalid" autocomplete="off">
             <button _ngcontent-serverapp-c85="" data-cy="newsletterSignupSubmit" type="submit" class="btn-signup btn btn-primary fw-500">Shorten URL!</button>
             <div _ngcontent-serverapp-c85="" class="invalid-feedback mt-2">Email required.</div>
             <!----><!---->
@@ -41,10 +49,11 @@ const page = (title, body) => {
     const title = "Tiny-URL result";
     const body = `
     <div class="input-group mb-3">
-      <div class="input-group-prepend">
-        <span class="input-group-text" id="basic-addon1">URL</span>
+      <input type="text" class="form-control" value=${short_url} aria-label="Username" aria-describedby="basic-addon1" id = "short_url" readonly>
+      <div class="input-group-append">
+        <button class="btn btn-outline-secondary" type="button" onclick="copy()"><i class="fa fa-copy"></i></button>
+        <button class="btn btn-outline-secondary" type="button" onclick="history.back()">Shorten another</button>
       </div>
-      <input type="text" class="form-control" value=${short_url} aria-label="Username" aria-describedby="basic-addon1" readonly>
     </div>`
 
     return page(title, body);
