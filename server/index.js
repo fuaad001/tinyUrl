@@ -32,10 +32,11 @@ app.get("/:id", async (req, res) => {
   const { id } = req.params;
   try {
   const url = await urls.read(id);
+  console.log("Url: ", url);
   if (!url.url) {
     throw new ApiError(400, "Short url does not exist");
   }
-  window.open(url.url);
+  res.status(302).redirect(url.url);
   } catch (err) {
     res.status(err.status).json({ message: err.message });
   }
