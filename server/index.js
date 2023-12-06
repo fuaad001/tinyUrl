@@ -36,8 +36,7 @@ app.get("/:id", async (req, res) => {
   if (!url.url) {
     throw new ApiError(400, "Short url does not exist");
   }
-  // res.redirect(url.url);
-  res.redirect('http://google.com')
+  res.status(302).redirect(url.url);
   } catch (err) {
     res.status(err.status).json({ message: err.message });
   }
